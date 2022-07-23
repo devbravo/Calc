@@ -1,3 +1,10 @@
+numberBtn = document.querySelectorAll('[data-number]');
+operandBtn = document.querySelectorAll('[data-operand]');
+equalBtn = document.querySelector('[data-equal]');
+clearBtn = document.querySelector('[data-clear]');
+previousTextElement = document.querySelector('[data-previous]');
+currentTextElement = document.querySelector('[data-current]');
+calcHistory = document.querySelector('[data-prev-10-calc]');
 
 class Calculator {
   constructor(previousTextElement, currentTextElement, calcHistory) {
@@ -52,26 +59,30 @@ class Calculator {
 
   // compute the actions
   operate() {
-    let result;
-    const prev = parseFloat(this.previousOperation);
-    const current = parseFloat(this.currentOPeration);
+    let result = 0
+    const prev = parseFloat(this.previousOperation)
+    const current = parseFloat(this.currentOPeration)
 
     switch (this.operand) {
       case '+':
-        result = prev + current;
+        result = (prev + current);
         break;
       case '-':
-        result = prev - current;
+        result = (prev - current);
         break;
       case '*':
-        result = prev * current;
+        result = (prev * current);
         break;
-   
       case '÷':
         if (current === 0 && this.operand === '÷') {
           result = "Can't divide by 0";
         } else {
-          result = prev / current;
+          result = (prev / current)
+          if (Number.isInteger(result)) {
+            result = prev / current
+          } else {
+            result = result.toFixed(2)
+          }
         }
         break;
       default:
@@ -96,14 +107,6 @@ class Calculator {
 }
 
 
-numberBtn = document.querySelectorAll('[data-number]');
-OperandBtn = document.querySelectorAll('[data-operand]');
-equalBtn = document.querySelector('[data-equal]');
-clearBtn = document.querySelector('[data-clear]');
-previousTextElement = document.querySelector('[data-previous]');
-currentTextElement = document.querySelector('[data-current]');
-calcHistory = document.querySelector('[data-prev-10-calc]');
-
 const calculator = new Calculator(
   previousTextElement,
   currentTextElement,
@@ -118,7 +121,7 @@ numberBtn.forEach(button => {
   });
 });
 
-OperandBtn.forEach(button => {
+operandBtn.forEach(button => {
   button.addEventListener('click', () => {
     calculator.chooseOperand(button.innerText);
     calculator.updateDisplay();
