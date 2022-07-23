@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link rel='stylesheet' href='styles/styles.css'/>
+  </head>
+  <body>
+    <script src='js/calculator.js' defer></script>
+    <div class='calc-container'>
+      <div class='calculator'>
+        <div class='calc-display'>
+          <div data-prev-10-calc class='tenPrevCalc'></div>
+          <div data-previous class='previous'></div>
+          <div data-current class='current'>0</div>
+        </div>
+        <button id='add' class='calc-operator' data-operand>+</button>
+        <button id='subtract' class='calc-operator' data-operand>-</button>
+        <button id='multiply' class='calc-operator' data-operand>*</button>
+        <button id='divide' class='calc-operator' data-operand>÷</button>
+        <button data-number id='seven' class='calc-num'>7</button>
+        <button data-number id='eight' class='calc-num'>8</button>
+        <button data-number id='nine' class='calc-num'>9</button>
+        <button data-number id='four' class='calc-num'>4</button>
+        <button data-number id='five' class='calc-num'>5</button>
+        <button data-number id='six' class='calc-num'>6</button>
+        <button data-number id='one' class='calc-num'>1</button>
+        <button data-number id='two' class='calc-num'>2</button>
+        <button data-number id='three' class='calc-num'>3</button>
+        <button data-number id='zero' class='calc-num'>0</button>
+        <button data-clear id='clear' class='calc-operator'>C</button>
+        <button data-equal id='equal' class='calc-operator'>=</button>
+      </div>
+    </div>
+  </body>
+</html>

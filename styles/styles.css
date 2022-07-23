@@ -1,0 +1,140 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #00d9ff, #892fff);
+}
+
+.calc-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  display: grid;
+  grid-template-rows: minmax(70px, auto) repeat(4, 4rem);
+  grid-template-columns: repeat(4, 4rem);
+  justify-content: center;
+  margin-top: 5rem;
+  box-shadow: 5px 5px 25px rgb(63, 63, 63);
+}
+.calc-display {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 0;
+  height: auto;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
+
+.calc-display .tenPrevCalc {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  min-height: 1.1rem;
+  margin-left: 0.4rem;
+  margin-top: 0.3rem;
+}
+
+.calc-display .previous {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  display: flex;
+  min-height: 1.2rem;
+  margin-left: 0.4rem;
+}
+
+.calc-display .current {
+  color: white;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  min-height: 1.2rem;
+  padding-right: 0.5rem;
+  /* margin-bottom: 0.3rem; */
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.calc-operator {
+  grid-column: 4 / -1;
+  font-size: 1.3rem;
+}
+
+.calc-num {
+  font-size: 1.3rem;
+}
+
+#seven,
+#eight,
+#nine,
+#add {
+  grid-row: 2 / 3;
+}
+
+#four,
+#five,
+#six,
+#subtract {
+  grid-row: 3 / 4;
+}
+
+#one,
+#two,
+#three,
+#multiply {
+  grid-row: 4 / 5;
+}
+
+#clear,
+#zero,
+#equal,
+#divide {
+  grid-row: 5 / -1;
+}
+
+#seven,
+#four,
+#one,
+#clear {
+  grid-column: 1 / 2;
+}
+
+#eight,
+#five,
+#two,
+#zero {
+  grid-column: 2 / 3;
+}
+
+#nine,
+#six,
+#three,
+#equal {
+  grid-column: 3 / 4;
+}
